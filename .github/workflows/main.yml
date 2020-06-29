@@ -12,5 +12,7 @@ jobs:
         who-to-greet: 'Julz'
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2
+    - name: secret check
+      run: $I_LOVE_ROXIE && echo "I love roxie"
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v2

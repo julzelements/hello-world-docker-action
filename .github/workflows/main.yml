@@ -30,5 +30,5 @@ jobs:
         run: echo "$MATRIX_CONTEXT"
       - name: Dump labels
         env:
-          LABELS: ${{ toJson(github.event.labels) }}
+          LABELS: ${{ toJson(github.event) }}
         run: echo "$LABELS"

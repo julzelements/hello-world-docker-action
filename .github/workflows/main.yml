@@ -30,5 +30,8 @@ jobs:
         run: echo "$MATRIX_CONTEXT"
       - name: Dump labels
         env:
-          LABELS: ${{ toJson(github.event) }}
+          LABELS: ${{ toJson(github.event.pull_request.labels) }}
         run: echo "$LABELS"
+      - name: Conditional
+        if: contains( toJson( github.event.pull_request.labels.*.name, 'cypress' )
+        run: echo "do the e2e tests"

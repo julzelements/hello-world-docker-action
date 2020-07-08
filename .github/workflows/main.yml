@@ -33,6 +33,6 @@ jobs:
           LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
         if: contains( ${{ toJson(github.event.pull_request.labels.*.name) }}, 'cypress')
         run: echo "$LABELS"
-      # - name: Conditional
-      #   if: contains( toJson( github.event.pull_request.labels.*.name, 'cypress' )
-      #   run: echo "do the e2e tests"
+      - name: run e2e
+        if: contains( ${{ toJson(github.event.pull_request.labels.*.name) }}, 'cypress')
+        run: echo "running the e2e tests"

@@ -31,7 +31,7 @@ jobs:
       - name: Dump labels
         env:
           LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
-        if: contains( env.LABELS, 'cypress')
+        if: contains( ${{ toJson(github.event.pull_request.labels.*.name) }}, 'cypress')
         run: echo "$LABELS"
       # - name: Conditional
       #   if: contains( toJson( github.event.pull_request.labels.*.name, 'cypress' )

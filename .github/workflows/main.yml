@@ -34,5 +34,5 @@ jobs:
         if: contains( ${{ toJson(github.event.pull_request.labels.*.name) }}, 'cypress')
         run: echo "$LABELS"
       - name: run e2e
-        if: contains( ${{ toJson(github.event.pull_request.labels.*.name) }}, 'cypress')
+        if: 'false'
         run: echo "running the e2e tests"
